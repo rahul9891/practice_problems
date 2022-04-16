@@ -1,6 +1,21 @@
 package Hacker_Rank;
 
 import java.util.ArrayList;
+
+
+/**
+ * 
+ * Given an array of 5 positive numbers
+ * print out the minimum and maximum sum of the 4 numbers
+ * 
+ *  a = [1,2,3,4,5]
+ *  
+ *  min sum = 1+2+3+4 = 10
+ *  max sum = 2+3+4+5 = 13
+ *  
+ *  out put = 10 13
+ * 
+ * */
 import java.util.List;
 
 public class Mini_Max_Sum {

@@ -77,6 +77,8 @@ public class Binary_Tree {
         //      /\
         //     0  4
 
+        
+
 
        Boolean result =  is_binary_search_tree(head4); //should return false
        System.out.println(result);
@@ -88,29 +90,19 @@ public class Binary_Tree {
 
     static Boolean is_binary_search_tree(TreeNode head) {
 
-        Queue<TreeNode> queue = new LinkedList<>();
+        return isBST(head, null, null);
+    }
 
-        if(head == null) return false;
+    static boolean isBST(TreeNode root, TreeNode left, TreeNode right) {
 
-        queue.add(head);
+        if(root == null) return true;
 
-        while(!queue.isEmpty()) {
+        if(left != null && left.value >= root.value) return false;
 
-            TreeNode current = queue.remove();
+        if(right != null && right.value <= root.value) return false;
 
-            if(current.left != null) {
-                if(current.left.value < current.value) {
-                    queue.add(current.left);
-                }else return false;                
-            }
-            if(current.right != null) {
-                if(current.right.value > current.value) {
-                    queue.add(current.right);
-                } else return false;
-            }
+        return isBST(root.left, left, root) && isBST(root.right, root, right);
 
-        }
-        return true;
     }
 
 

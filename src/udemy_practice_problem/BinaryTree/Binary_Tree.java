@@ -1,8 +1,6 @@
-package udemy_practice_problem;
+package udemy_practice_problem.BinaryTree;
 
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Queue;
 
 public class Binary_Tree {
 
@@ -19,7 +17,7 @@ public class Binary_Tree {
         mapping1.put(1, childrenB);
         mapping1.put(2, childrenC);
 
-        TreeNode head1 = createTree(mapping1, 0);
+        udemy_practice_problem.BinaryTree.TreeNode head1 = createTree(mapping1, 0);
         // This tree is:
         // head1 = 0
         //        / \
@@ -36,7 +34,7 @@ public class Binary_Tree {
         mapping2.put(1, childrenE);
         mapping2.put(4, childrenF);
 
-        TreeNode head2 = createTree(mapping2, 3);
+        udemy_practice_problem.BinaryTree.TreeNode head2 = createTree(mapping2, 3);
         // This tree is:
         //  head2 = 3
         //        /   \
@@ -53,7 +51,7 @@ public class Binary_Tree {
         mapping3.put(1, childrenH);
         mapping3.put(5, childrenI);
 
-        TreeNode head3 = createTree(mapping3, 3);
+        udemy_practice_problem.BinaryTree.TreeNode head3 = createTree(mapping3, 3);
         // This tree is:
         //  head3 = 3
         //        /   \
@@ -69,7 +67,7 @@ public class Binary_Tree {
         mapping4.put(3, childrenJ);
         mapping4.put(1, childrenK);
 
-        TreeNode head4 = createTree(mapping4, 3);
+        udemy_practice_problem.BinaryTree.TreeNode head4 = createTree(mapping4, 3);
         // This tree is:
         //  head4 = 3
         //        /   \
@@ -88,12 +86,12 @@ public class Binary_Tree {
     }
 
 
-    static Boolean is_binary_search_tree(TreeNode head) {
+    static Boolean is_binary_search_tree(udemy_practice_problem.BinaryTree.TreeNode head) {
 
         return isBST(head, null, null);
     }
 
-    static boolean isBST(TreeNode root, TreeNode left, TreeNode right) {
+    static boolean isBST(udemy_practice_problem.BinaryTree.TreeNode root, udemy_practice_problem.BinaryTree.TreeNode left, udemy_practice_problem.BinaryTree.TreeNode right) {
 
         if(root == null) return true;
 
@@ -106,14 +104,14 @@ public class Binary_Tree {
     }
 
 
-    public static TreeNode createTree(HashMap<Integer, int[]> mapping, int headValue) {
-        TreeNode head = new TreeNode(headValue, null, null);
-        HashMap<Integer, TreeNode> nodes = new HashMap<Integer, TreeNode>();
+    public static udemy_practice_problem.BinaryTree.TreeNode createTree(HashMap<Integer, int[]> mapping, int headValue) {
+        udemy_practice_problem.BinaryTree.TreeNode head = new udemy_practice_problem.BinaryTree.TreeNode(headValue, null, null);
+        HashMap<Integer, udemy_practice_problem.BinaryTree.TreeNode> nodes = new HashMap<Integer, udemy_practice_problem.BinaryTree.TreeNode>();
         nodes.put(headValue, head);
         for(Integer key : mapping.keySet()) {
             int[] value = mapping.get(key);
-            TreeNode leftChild = new TreeNode(value[0], null, null);
-            TreeNode rightChild = new TreeNode(value[1], null, null);
+            udemy_practice_problem.BinaryTree.TreeNode leftChild = new udemy_practice_problem.BinaryTree.TreeNode(value[0], null, null);
+            udemy_practice_problem.BinaryTree.TreeNode rightChild = new udemy_practice_problem.BinaryTree.TreeNode(value[1], null, null);
             nodes.put(value[0], leftChild);
             nodes.put(value[1], rightChild);
         }
@@ -125,23 +123,4 @@ public class Binary_Tree {
         return head;
     }
     
-}
-
-
-class TreeNode {
-
-    int value;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int value, TreeNode left, TreeNode right) {
-        this.value = value;
-        this.left = left;
-        this.right = right;
-    }
-
-    @Override
-    public String toString() {
-        return String.valueOf(value);
-    }
 }

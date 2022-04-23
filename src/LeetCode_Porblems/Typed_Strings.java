@@ -15,16 +15,8 @@ public class Typed_Strings {
 	}
 	
 	static boolean matchStrings(String a, String b) {
-		String finalA = buildString(a);
-		String finalB = buildString(b);
 
-		if(finalA.length() != finalB.length()) return false;
-
-		for(int i=0;i<finalA.length();i++) {
-			if(finalA.charAt(i) != finalB.charAt(i)) return false;
-		}
-
-		return true;
+		return buildString(a).equals(buildString(b));
 	}
 
 	static String buildString(String s) {

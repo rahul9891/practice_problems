@@ -15,7 +15,7 @@ public class Typed_Strings {
 	}
 	
 
-	static boolean matchStrings(String a, String b) {
+	static boolean matchStrings1(String a, String b) {
 
 		return buildString(a).equals(buildString(b));
 	}

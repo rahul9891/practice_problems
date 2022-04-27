@@ -50,7 +50,7 @@ public class Rotting_Oranges {
                 if(newVal == 1) {
                     freshCount--;
                     q.add(new Integer[]{newRow, newCol});
-                    grid[newRow][newVal] = 2;
+                    grid[newRow][newCol] = 2;
                 }
 
             }

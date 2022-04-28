@@ -33,28 +33,32 @@ import java.util.Queue;
 public class Minutes_of_Meetings {
 
     public static void main(String[] args) {
+    	
+    	int result = numOfMinutes(8, 4, new int[] {2,2,4,6,-1,4,4,5}, new int[] {0,0,4,0,7,3,6,0});
+    	
+    	System.out.println(result);
 
     }
 
-    public int numOfMinutes(int n, int headID, int[] manager, int[] informTime) {
+    public static int numOfMinutes(int n, int headID, int[] manager, int[] informTime) {
 
         Queue<Integer> q = new LinkedList<>();
-        int minutes = 0;
+        int totalMin = 0;
         q.add(headID);
-        minutes = Math.max(minutes, informTime[headID]);
+        totalMin = informTime[headID];
         while(!q.isEmpty()) {
-
+        	 int minutes = 0;
             int id = q.poll();
             for(int i=0;i<manager.length;i++) {
                 if(manager[i] == id) {
                     q.add(i);
-                    minutes = Math.max(minutes, minutes+informTime[i]);
+                    minutes += informTime[i];
                 }
             }
-
+            totalMin = Math.max(totalMin, minutes);
         }
 
-        return minutes;
+        return totalMin;
 
     }
 }

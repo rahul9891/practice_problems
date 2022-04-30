@@ -10,6 +10,7 @@ public class Dijkstra_Algorithm {
 
         int result = networkDelayTime(input, 4, 2);
 
+
         System.out.println(result);
 
     }
